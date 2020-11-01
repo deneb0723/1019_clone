@@ -55,4 +55,6 @@ const assets = gulp.series([styles, pug]);
 
 const postDev = gulp.parallel([webserver, styleWatch, pugWatch]);
 
-export const dev = gulp.series([prepare, assets, postDev]);
+export const build = gulp.series([prepare, assets]);
+
+export const dev = gulp.series([build, postDev]);
